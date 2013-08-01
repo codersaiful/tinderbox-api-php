@@ -7,7 +7,7 @@ See examples folder for code samples.
 
 Usage:
 
-    $tinderbox = new TinderBox($hostname, $api_key);
+    $tinderbox = new TinderBox($hostname="my.domain.com", $api_key="abcd1234");
 
 	// Returns Array of stdClass objects from json_decode
 	$proposals = $tinderbox->getProposals();
