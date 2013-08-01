@@ -10,10 +10,10 @@ Usage:
     $tinderbox = new TinderBox($hostname, $api_key);
 
 	// Returns Array of stdClass objects from json_decode
-	$proposals = $tinderbox->proposals();
+	$proposals = $tinderbox->getProposals();
 
 	// Returns Array of TinderBox_Proposal objects.
-	$proposals = $tinderbox->proposals($stdClass=false);
+	$proposals = $tinderbox->getProposals($stdClass=false);
 
 
 ## Contributing
