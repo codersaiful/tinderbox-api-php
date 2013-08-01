@@ -39,18 +39,18 @@ class TinderBox
         return $json_objects ? $json_proposals : $proposal_list;
     }
 
-	public function getProposal($id, $stdClass=false)
+    public function getProposal($id, $stdClass=false)
     {
         $this->log("Fetching proposal $id");
         $json_proposal = $this->get("proposals/{$id}");
-		if ($stdClass == true) {
-			return $json_proposal->proposal;
-		}
+        if ($stdClass == true) {
+            return $json_proposal->proposal;
+        }
 
-		return new TinderBox_Proposal($json_proposal->proposal, $this);
-	}
+        return new TinderBox_Proposal($json_proposal->proposal, $this);
+    }
 
-	# Returns a TinderBox_Proposal object to be populated and then saved.
+    # Returns a TinderBox_Proposal object to be populated and then saved.
     public function newProposal($data=array())
     {
         return new TinderBox_Proposal($data, $this);
@@ -62,7 +62,7 @@ class TinderBox
         return $this->post('proposals', array("proposal" => $data));
     }
 
-	# Sample/Base method for deleting a proposal
+    # Sample/Base method for deleting a proposal
     public function deleteProposal($id)
     {
         return $this->delete("proposals/$id");
@@ -123,9 +123,9 @@ class TinderBox
                 if ($data)
                     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
                 break;
-			case "DELETE":
-				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
-				break;
+            case "DELETE":
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+                break;
             default:  # GET
                 if ($data)
                     $url = sprintf("%s&%s", $url, http_build_query($data));

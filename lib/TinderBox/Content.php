@@ -8,13 +8,13 @@ require_once __DIR__ . '/BaseModel.php';
 class TinderBox_Content extends TinderBox_BaseModel
 {
 
-	protected function getController()
-	{
-		return 'proposal_contents';
-	}
+    protected function getController()
+    {
+        return 'proposal_contents';
+    }
 
-	protected function getObjectKey()
-	{
-		return 'proposal_content';
-	}
+    protected function getObjectKey()
+    {
+        return 'proposal_content';
+    }
 }
